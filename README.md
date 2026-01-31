@@ -45,6 +45,49 @@ Talos isn't just a "wrapper" around existing tools; it is a fundamental shift in
 *   Use **Flutter Integration Tests** if you only care about logic and don't mind writing verbose Dart code that designers can't read.
 *   Use **Talos** if you want an autonomous agent that tests the User Experience, verifies the Visual Design, and heals itself when code changes.
 
+## Architecture
+
+Talos runs locally on your machine, consisting of two main components talking to each other:
+
+1.  **Talos CLI (React + Electron)**: The brain and the face. A desktop application where you define your features, write test cases in natural language, and watch the live execution. It holds your test data locally.
+2.  **Talos Agent (Python)**: The hands. A lightweight local service that connects to your Android device (via ADB) to perform the actions and capture screenshots.
+
+## Installation & Quick Start
+
+You will need to run both the Agent and the CLI.
+
+### Prerequisites
+*   Node.js (v18+)
+*   Python 3.9+
+*   ADB (Android Debug Bridge) installed and in PATH
+*   An Android device connected via USB or an emulator running.
+
+### 1. Start the Agent (Python)
+
+The agent acts as the bridge to your device.
+
+```bash
+cd talos-agent
+python -m venv venv
+source venv/bin/activate  # or .\venv\Scripts\activate on Windows
+pip install -r requirements.txt
+./run_agent.sh
+```
+
+The agent will start on port 8000.
+
+### 2. Start the App (CLI)
+
+The CLI is the main interface.
+
+```bash
+cd talos-cli
+npm install
+npm run dev
+```
+
+This will launch the Talos desktop application.
+
 ## 🗺️ Roadmap & Goals
 
 | Feature | Status |
@@ -55,10 +98,3 @@ Talos isn't just a "wrapper" around existing tools; it is a fundamental shift in
 | **Kubernetes Environment** | 🔮 Future |
 | **GitHub Integration** | 🔮 Future |
 | **CI/CD Integration** | 🔮 Future |
-
-## Installation
-How to get and install the three projects to work together:
-
-*   [https://github.com/Talos-Tester-AI/talos-server.git](https://github.com/Talos-Tester-AI/talos-server.git)
-*   [https://github.com/Talos-Tester-AI/talos-webapp.git](https://github.com/Talos-Tester-AI/talos-webapp.git)
-*   [https://github.com/Talos-Tester-AI/talos-agent.git](https://github.com/Talos-Tester-AI/talos-agent.git)
