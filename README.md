@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/icon.jpg" alt="Talos Icon" width="150" height="150" />
+  <img src="assets/icon.png" alt="Talos Icon" width="150" height="150" />
 </p>
 
 # What is Talos?
