@@ -81,12 +81,31 @@ You will need to run both the Agent and the CLI.
 - ADB (Android Debug Bridge) installed and in PATH
 - An Android device connected via USB or an emulator running.
 
-### 1. Start the Agent (Python)
+### Quick Start
 
-The agent acts as the bridge to your device.
+We provide unified scripts to set up and run both the Agent and the CLI. 
 
+The scripts will:
+1. Ask where you want to install components (default: parent directory).
+2. Automatically clone `talos-agent` and `talos-cli` if they are missing.
+3. Install dependencies and run the application.
+
+#### macOS / Linux
 ```bash
-git clone https://github.com/Talos-Tester-AI/talos-agent.git
+./install_and_run.sh
+```
+
+#### Windows
+```powershell
+.\install_and_run.ps1
+```
+
+### Manual Installation (Advanced)
+
+If you prefer to run components manually or need to debug:
+
+#### 1. Start the Agent (Python)
+```bash
 cd talos-agent
 python -m venv venv
 source venv/bin/activate  # or .\venv\Scripts\activate on Windows
@@ -94,15 +113,9 @@ pip install -r requirements.txt
 ./run_agent.sh
 ```
 
-The agent will start on port 8000.
-
-### 2. Start the App (CLI)
-
-The CLI is the main interface.
-
+#### 2. Start the App (CLI)
 ```bash
-git clone https://github.com/Talos-Tester-AI/talos-ai.git
-cd talos-ai
+cd talos-cli
 npm install
 npm run dev
 ```
