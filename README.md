@@ -4,6 +4,12 @@
 
 # What is Talos?
 
+<p align="center">
+  <img src="assets/talos.gif" alt="Talos Demo" width="100%" />
+  <br />
+  <a href="assets/complete.mp4">Watch the complete video</a>
+</p>
+
 > [!WARNING]
 > **Development Status**: This project is currently in active development and is **not stable yet**. Features and functionality are subject to change.
 
@@ -83,19 +89,22 @@ You will need to run both the Agent and the CLI.
 
 ### Quick Start
 
-We provide unified scripts to set up and run both the Agent and the CLI. 
+We provide unified scripts to set up and run both the Agent and the CLI.
 
 The scripts will:
+
 1. Ask where you want to install components (default: parent directory).
 2. Automatically clone `talos-agent` and `talos-cli` if they are missing.
 3. Install dependencies and run the application.
 
 #### macOS / Linux
+
 ```bash
 ./install_and_run.sh
 ```
 
 #### Windows
+
 ```powershell
 .\install_and_run.ps1
 ```
@@ -105,6 +114,7 @@ The scripts will:
 If you prefer to run components manually or need to debug:
 
 #### 1. Start the Agent (Python)
+
 ```bash
 cd talos-agent
 python -m venv venv
@@ -114,6 +124,7 @@ pip install -r requirements.txt
 ```
 
 #### 2. Start the App (CLI)
+
 ```bash
 cd talos-cli
 npm install
