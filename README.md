@@ -5,7 +5,7 @@
 # What is Talos?
 
 <p align="center">
-  <img src="assets/talos.gif" alt="Talos Demo" width="100%" />
+  <img src="assets/output.gif" alt="Talos Demo" width="100%" />
   <br />
   <a href="assets/complete.mp4">Watch the complete video</a>
 </p>
